@@ -1,7 +1,19 @@
 {
   "name": "git-howto-lab2",
   "version": "0.0.0",
-  "description": "Lab 2: package.json, dependencies, SemVer, TypeScript, \u001b[C\u001b[D\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[D\u001b[A\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[Cs\u001b[C\u001b[C\u001b[D\u001b[D\u001b[B\u001b[B\u001b[C\u001b[A\u001b[D",
+  "description": "Lab 2: package.json, dependencies, SemVer, TypeScript, and Git hooks",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "typecheck": "tsc --noEmit",
+    "demo": "tsx src/demo.ts",
+    "prepare": "husky"
+  },
   "keywords": [
     "typescript",
     "semver",
@@ -18,18 +30,6 @@
   },
   "license": "MIT",
   "author": "Ivan Chernenko",
-  "type": "commonjs",
-  "main": "index.js",
-  "scripts": {
-    "build": "tsup src/index.ts --format cjs,esm --dts",
-    "lint": "eslint . --ext .ts",
-    "lint:fix": "eslint . --ext .ts --fix",
-    "format": "prettier --write .",
-    "format:check": "prettier --check .",
-    "typecheck": "tsc --noEmit",
-    "demo": "tsx src/demo.ts",
-    "prepare": "husky"
-  },
   "dependencies": {
     "dotenv": "^18.0.4",
     "zod": "^4.6.5"
