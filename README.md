@@ -63,4 +63,4 @@ logger.info('Started');
 
 ## Релизы
 
-[GitHub Releases & Tags](https://github.com/Ivan-Ch807/git-howto-lab2)
+[GitHub Releases & Tags](https://github.com/Ivan-Ch807/git-howto-lab2/tags)
