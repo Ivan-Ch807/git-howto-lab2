@@ -1,6 +1,6 @@
 {
   "name": "git-howto-lab2",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "Lab 2: package.json, dependencies, SemVer, TypeScript, and Git hooks",
   "type": "module",
   "main": "dist/index.cjs",
