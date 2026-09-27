@@ -1,5 +1,7 @@
 import { config } from './config';
 
+export { config };
+
 export function add(a: number, b: number): number {
   return a + b;
 }
@@ -16,6 +18,23 @@ export type NumberFormatOptions = {
 export function formatNumber(value: number, options?: NumberFormatOptions): string {
   const precision = options?.precision ?? config.APP_PRECISION;
   return value.toFixed(precision);
+}
+
+export interface User {
+  id: number;
+  name: string;
+}
+
+export function groupBy<T>(arr: T[], key: keyof T): Record<string, T[]> {
+  return arr.reduce(
+    (acc, item) => {
+      const group = String(item[key]);
+      acc[group] = acc[group] ?? [];
+      acc[group].push(item);
+      return acc;
+    },
+    {} as Record<string, T[]>,
+  );
 }
 
 export type LogLevel = 'silent' | 'info' | 'debug';
