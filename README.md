@@ -1,46 +1,46 @@
 # Git HowTo Lab 2 — TypeScript Utility Library
 
-Лабораторная библиотека TypeScript-утилит. Демонстрирует работу с `package.json`, разделением `dependencies`/`devDependencies`, строгой типизацией, валидацией `.env` через `zod`, Git-хуками (`Husky`, `Commitlint`, `ESLint`, `Prettier`) и SemVer.
+Лабораторна бібліотека TypeScript-утиліт. Демонструє роботу з `package.json`, розділенням `dependencies`/`devDependencies`, суворою типізацією, валідацією `.env` через `zod`, Git-хуками (`Husky`, `Commitlint`, `ESLint`, `Prettier`) та SemVer.
 
 ---
 
-## Быстрый старт
+## Швидкий старт
 
 ```bash
-npm i           # Установка зависимостей
+npm i           # Встановлення залежностей
 npm run demo    # Запуск демо
-npm run build   # Сборка (CJS, ESM, .d.ts в dist/)
+npm run build   # Збірка (CJS, ESM, .d.ts у dist/)
 
-# Проверки качества
+# Перевірки якості
 npm run typecheck && npm run lint && npm run format:check
 ```
 
 ---
 
-## Версионирование (SemVer)
+## Версіонування (SemVer)
 
-- **v0.1.0** — Базовые утилиты `add`, `capitalize` (`any`).
-- **v0.2.0** — Добавлены типы `number`, `string`.
-- **v0.3.0** — Добавлены `NumberFormatOptions` и `formatNumber`.
-- **v0.4.0** — Добавлен интерфейс `User` и `groupBy<T>`.
-- **v0.5.0** — Добавлен класс `Logger` и валидация `.env` через `zod`.
-- **v1.0.0** — Стабилизация API: реэкспорты в `index.ts`, запрет `any`, `exports` в `package.json`.
-- **v2.0.0** — **Breaking change**: `add` принимает массив `number[]` вместо двух аргументов.
+- **v0.1.0** — Базові утиліти `add`, `capitalize` (`any`).
+- **v0.2.0** — Додано типи `number`, `string`.
+- **v0.3.0** — Додано `NumberFormatOptions` та `formatNumber`.
+- **v0.4.0** — Додано інтерфейс `User` та `groupBy<T>`.
+- **v0.5.0** — Додано клас `Logger` та валідацію `.env` через `zod`.
+- **v1.0.0** — Стабілізація API: реекспорти в `index.ts`, заборона `any`, `exports` у `package.json`.
+- **v2.0.0** — **Breaking change**: `add` приймає масив `number[]` замість двох аргументів.
 
 ---
 
-## Переменные окружения (.env)
+## Змінні оточення (.env)
 
 Файл `.env` (в `.gitignore`):
 
 ```env
-APP_PRECISION=3 # 0..10 (по умолчанию: 2)
-LOG_LEVEL=debug # 'silent' | 'info' | 'debug' (по умолчанию: 'info')
+APP_PRECISION=3 # 0..10 (за замовчуванням: 2)
+LOG_LEVEL=debug # 'silent' | 'info' | 'debug' (за замовчуванням: 'info')
 ```
 
 ---
 
-## Использование
+## Використання
 
 ```typescript
 import { add, capitalize, formatNumber, groupBy, Logger, type User } from './src/index';
@@ -61,6 +61,6 @@ logger.info('Started');
 
 ---
 
-## Релизы
+## Релізи
 
 [GitHub Releases & Tags](https://github.com/Ivan-Ch807/git-howto-lab2/tags)
